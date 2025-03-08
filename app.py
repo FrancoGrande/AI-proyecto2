@@ -7,13 +7,14 @@ from bs4 import BeautifulSoup
 import google.generativeai as genai
 import streamlit as st
 from deep_translator import GoogleTranslator
+import toml
 import os
 
-# Set the API key as an environment variable
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBpZ0icCbyC2o6R83Ys3BUDdsm1tqX5EGI"
+# Read the API key from secrets.toml
+secrets = toml.load("secrets.toml")
+GOOGLE_API_KEY = secrets["gemini"]["api_key"]
 
 # Set up the Gemini API
-GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-1.5-pro-001')
 
