@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Article Summarizer</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Article Summarizer</h1>
+
+    <div class="input-form">
+        <label for="input-type">Input Type:</label>
+        <select id="input-type">
+            <option value="url">URL</option>
+            <option value="pdf">PDF</option>
+            <option value="docx">DOCX</option>
+            <option value="text">Text</option>
+        </select>
+
+        <label for="input-data">Input Data:</label>
+        <input type="text" id="input-data" placeholder="Enter URL, PDF path, DOCX path, or Text">
+
+        <button id="summarize-button">Summarize</button>
+    </div>
+
+    <div class="summary-output">
+        <h2>Summary:</h2>
+        <p id="summary-text"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
